@@ -1,4 +1,4 @@
-const CACHE='ovp-v8.0.0';
+const CACHE='ovp-v10.0.0';
 const CORE=[
   './','./index.html','./manifest.webmanifest',
   './assets/icon-192.png','./assets/icon-512.png',
