@@ -19,7 +19,7 @@
 </head>
 <body>
 <main class="app">
-<header class="top"><div class="eyebrow">Личная офлайн-версия · V10</div><h1>Команда профессионалов «Отмороженные в Пещере»</h1><div class="clockrow"><div class="clock" id="clock">--:--:--</div><div class="date" id="todayDate">—</div></div></header>
+<header class="top"><div class="eyebrow">Личная офлайн-версия · V10</div><h1>Команда профессионалов</h1><div class="clockrow"><div class="clock" id="clock">--:--:--</div><div class="date" id="todayDate">—</div></div></header>
 <section class="status"><div><strong id="dayStatus">Определяем смену…</strong><span id="dayDetail">Фиксированный цикл 2/2 от 13.07.2026</span></div><div class="pill" id="livePill">МСК</div></section>
 <section class="cards" id="cards"></section>
 <section class="section"><div class="sectionhead"><div><h2>Расписание</h2><p id="selectedMeta">Расписание дня · новая полная тройка в начале каждой смены</p></div><input class="datepick" type="date" id="datePicker" aria-label="Дата"></div><div class="tablewrap"><table><thead><tr><th class="num">№</th><th class="time">Время</th><th class="peoplecol">Роман</th><th class="peoplecol">Василий</th><th class="peoplecol">Роман II</th><th class="peoplecol">Ну, погоди!</th><th class="countcol">Людей</th></tr></thead><tbody id="tbody"></tbody></table></div></section>
@@ -29,7 +29,7 @@
 <div class="footer"><strong style="color:var(--text)">Расписание не хранится в памяти и не может «продолжиться неправильно».</strong> Каждый раз оно заново вычисляется из московской даты и фиксированной даты начала цикла. Статистика хранится локально и не влияет на ротацию.</div>
 </main><div class="toast" id="toast"></div>
 <script>
-const CONFIG=Object.freeze({version:'10.0.0',anchor:'2026-07-13',timezone:'Europe/Moscow',work:2,rest:2,sessionsPerRole:3,people:['Роман','Василий','Роман II','Ну, погоди!'],roles:['Стойка','Зал','Пещера','Усиление']});
+const CONFIG=Object.freeze({version:'10.0.0',anchor:'2026-07-13',timezone:'Europe/Moscow',work:2,rest:2,sessionsPerRole:3,people:['Роман','Василий','Роман II','Интерн'],roles:['Стойка','Зал','Пещера','Усиление']});
 const PEOPLE=[{name:'Роман',base:'roman'},{name:'Василий',base:'vasiliy'},{name:'Роман II',base:'roman-ii'},{name:'Ну, погоди!',base:'nu-pogodi'}];
 const NORMAL_SESSIONS=[['10:20','10:40'],['10:40','11:00'],['11:00','11:20'],['11:20','11:40'],['11:40','12:00'],['12:00','12:20'],['12:20','12:40'],['12:40','13:00'],['13:00','13:10'],['14:00','14:20'],['14:20','14:40'],['14:40','15:00'],['15:00','15:20'],['15:20','15:40'],['15:40','16:00'],['16:00','16:20'],['16:20','16:40'],['16:40','17:00'],['17:40','18:00'],['18:00','18:20'],['18:20','18:40'],['18:40','19:00'],['19:00','19:20'],['19:20','19:40'],['19:40','20:00'],['20:00','20:20'],['20:20','20:40'],['20:40','21:00']];
 const MONDAY_SESSIONS=[['12:00','12:20'],['12:20','12:40'],['12:40','13:00'],['13:00','13:20'],['13:20','13:40'],['13:40','14:00'],['14:00','14:20'],['14:20','14:40'],['14:40','15:00'],['15:00','15:20'],['15:20','15:40'],['15:40','16:00'],['17:00','17:20'],['17:20','17:40'],['17:40','18:00'],['18:00','18:20'],['18:20','18:40'],['18:40','19:00'],['19:00','19:20'],['19:20','19:40'],['19:40','20:00'],['20:00','20:20'],['20:20','20:40'],['20:40','21:00']];
