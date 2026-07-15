@@ -1,11 +1,11 @@
 {
-  "name": "Отмороженные в Пещере",
+  "name": "Отмороженные в Пещере — Comic Shift",
   "short_name": "Пещера",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#0a0a0b",
-  "theme_color": "#0a0a0b",
+  "background_color": "#ffdf38",
+  "theme_color": "#ffdf38",
   "lang": "ru",
   "icons": [
     {
