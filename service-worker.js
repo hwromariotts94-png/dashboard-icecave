@@ -1,4 +1,4 @@
-const CACHE='otmorozhennye-v16';
+const CACHE='varvarka-v17';
 const ASSETS=['./','./index.html','./manifest.webmanifest','./assets/icon-192.png','./assets/icon-512.png','./assets/roman.jpg','./assets/roman.png','./assets/roman.webp','./assets/vasiliy.jpg','./assets/vasiliy.png','./assets/vasiliy.webp','./assets/roman-ii.jpg','./assets/roman-ii.png','./assets/roman-ii.webp','./assets/nu-pogodi.jpg','./assets/nu-pogodi.png','./assets/nu-pogodi.webp'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
